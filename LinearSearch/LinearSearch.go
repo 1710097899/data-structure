@@ -1,19 +1,13 @@
-package main
+package LinearSrearch
 
-import "fmt"
+import "reflect"
 
 //线性查找
-func bfprt(a interface{}, arr []interface{}) interface{} {
-	for i, k := range arr {
-		if k == a {
+func Bfprt(a interface{}, arr []interface{}) int {
+	for i := 0; i < len(arr); i++ {
+		if reflect.DeepEqual(a, arr[i]) {
 			return i
 		}
 	}
 	return -1
-}
-
-func main() {
-	arr := []int{2, 6, 5, 9, 3, 3}
-	rst := bfprt(3, arr)
-	fmt.Println(rst)
 }
