@@ -1,6 +1,7 @@
 package SortingHelper
 
 import (
+	insertionSort "data_structure/InsertionSort"
 	"data_structure/SelectionSort"
 	"errors"
 	"fmt"
@@ -24,6 +25,10 @@ func SortTest(sortName string, arr []int, t *testing.T) {
 	start := time.Now()
 	if sortName == "SelectionSort" {
 		SelectionSort.SelectionSort(arr)
+	} else if sortName == "InsertionSort" {
+		insertionSort.InsertionSort(arr)
+	} else if sortName == "InsertionSort2" {
+		insertionSort.InsertionSort2(arr)
 	}
 	elapsed := time.Since(start)
 	err := IsSorted(arr)
