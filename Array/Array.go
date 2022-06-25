@@ -18,6 +18,9 @@ type IArray interface {
 	DelectFirst() interface{}
 	DelectLast() interface{}
 	DelectE(e interface{}) bool
+	GetLast() interface{}
+	GetFrist() interface{}
+	GetArray() []interface{}
 }
 
 type Array struct {
@@ -31,6 +34,10 @@ func NewArray(cap int) IArray {
 		data: make([]interface{}, cap),
 		size: 0,
 	}
+}
+
+func (a *Array) GetArray() []interface{} {
+	return a.data[:a.size]
 }
 
 //获取数组中元素的个数
@@ -87,6 +94,16 @@ func (a *Array) GetIndex(index int) interface{} {
 		panic("Get failed. Index is illegal")
 	}
 	return a.data[index]
+}
+
+//取出数组中最后一个元素
+func (a *Array) GetLast() interface{} {
+	return a.GetIndex(a.size - 1)
+}
+
+//取出数组中第一个元素
+func (a *Array) GetFrist() interface{} {
+	return a.GetIndex(0)
 }
 
 //修改索引为index的元素
