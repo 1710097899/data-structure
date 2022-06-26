@@ -6,7 +6,7 @@
 * 插入排序                                         //InsertionSort
 * 动态数组                                         //Array
 * 栈                                              //Stack
-* 队列(循环队列,链表队列)
+* 队列(循环队列,链表队列)                            //ArrayQueue数组队列，LoopQueue循环队列
 * 链表（递归遍历）
 * 归并排序
 * 快速排序
