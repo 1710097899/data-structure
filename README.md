@@ -7,7 +7,7 @@
 * 动态数组                                         //Array
 * 栈                                              //Stack
 * 队列(循环队列,链表队列)                            //ArrayQueue数组队列，LoopQueue循环队列，LinkedListQueue链表队列
-* 链表（递归遍历）
+* 链表（递归遍历）                                  //Linklist/Solution
 * 归并排序
 * 快速排序
 * 二分查找法
