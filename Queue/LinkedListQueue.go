@@ -53,7 +53,7 @@ func (l *LinkedListQueue) Enqueue(e interface{}) {
 
 func (l *LinkedListQueue) Dequeue() interface{} {
 	if l.IsEmpty() {
-		panic("Cannot dequeue from an empty queue")
+		panic("Can't dequeue from an empty queue")
 	}
 	retNode := l.head
 	l.head = l.head.next
