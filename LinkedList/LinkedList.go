@@ -25,8 +25,8 @@ type node struct {
 }
 
 type LinkedList struct {
-	head *node
-	size int
+	dummyHead *node
+	size      int
 }
 
 //node的构造函数
@@ -44,10 +44,11 @@ func NewNode(e interface{}, next *node) *node {
 	}
 }
 
+//创建一个虚拟结点在整个链表第0个结点之前
 func NewLinkedList() ILinkedList {
 	return &LinkedList{
-		head: NewNode(nil, nil),
-		size: 0,
+		dummyHead: NewNode(nil, nil),
+		size:      0,
 	}
 }
 
@@ -69,7 +70,7 @@ func (l *LinkedList) Add(index int, e interface{}) {
 	if index < 0 || index > l.size {
 		panic("Add fail. Illegal index.")
 	}
-	prev := l.head
+	prev := l.dummyHead
 	for i := 0; i < index; i++ {
 		prev = prev.next
 	}
@@ -89,7 +90,7 @@ func (l *LinkedList) Get(index int) interface{} {
 	if index < 0 || index > l.size {
 		panic("Add fail. Illegal index.")
 	}
-	cur := l.head.next
+	cur := l.dummyHead.next
 	for i := 0; i < index; i++ {
 		cur = cur.next
 	}
@@ -111,7 +112,7 @@ func (l *LinkedList) Set(index int, e interface{}) {
 	if index < 0 || index >= l.size {
 		panic("Set faild. Illegal index.")
 	}
-	cur := l.head.next
+	cur := l.dummyHead.next
 	for i := 0; i < index; i++ {
 		cur = cur.next
 	}
@@ -120,7 +121,7 @@ func (l *LinkedList) Set(index int, e interface{}) {
 
 //查找在链表中是否存在e这个元素
 func (l *LinkedList) Contains(e interface{}) bool {
-	cur := l.head.next
+	cur := l.dummyHead.next
 	for cur.next != nil {
 		if cur.e == e {
 			return true
@@ -136,7 +137,7 @@ func (l *LinkedList) Remove(index int) interface{} {
 	if index < 0 || index > l.size {
 		panic("remove failed.Index is illegal.")
 	}
-	prev := l.head
+	prev := l.dummyHead
 	for i := 0; i < index; i++ {
 		prev = prev.next
 	}
@@ -158,7 +159,7 @@ func (l *LinkedList) RemoveLast() interface{} {
 }
 
 func (l *LinkedList) RemoveElement(e interface{}) {
-	prev := l.head
+	prev := l.dummyHead
 	for prev.next != nil {
 		if prev.next.e == e {
 			break
@@ -174,7 +175,7 @@ func (l *LinkedList) RemoveElement(e interface{}) {
 
 func (l *LinkedList) String() string {
 	var str string
-	cur := l.head.next
+	cur := l.dummyHead.next
 	//fmt.Println("kkkk :",cur.e)`
 	for cur != nil {
 		val := cur.e
