@@ -2,6 +2,7 @@ package SortingHelper
 
 import (
 	insertionSort "data_structure/InsertionSort"
+	"data_structure/MergeSort"
 	"data_structure/SelectionSort"
 	"errors"
 	"fmt"
@@ -16,7 +17,6 @@ func IsSorted(arr []int) error {
 			fmt.Println(i, "----", i+1)
 			return errors.New("this sort is error ")
 		}
-
 	}
 	return nil
 }
@@ -29,6 +29,10 @@ func SortTest(sortName string, arr []int, t *testing.T) {
 		insertionSort.InsertionSort(arr)
 	} else if sortName == "InsertionSort2" {
 		insertionSort.InsertionSort2(arr)
+	} else if sortName == "MergeSort" {
+		MergeSort.Sort(arr)
+	} else if sortName == "MergeSortBU" {
+		MergeSort.SortBU(arr)
 	}
 	elapsed := time.Since(start)
 	err := IsSorted(arr)

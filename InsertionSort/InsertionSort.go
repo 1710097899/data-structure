@@ -30,3 +30,16 @@ func InsertionSort2(arr []int) {
 		}
 	}
 }
+
+//插入排序协助优化归并排序
+func Sort(arr []int, l int, r int) {
+	for i := l; i <= r; i++ {
+		k := arr[i]
+		for j := i; j-1 > l; j-- {
+			if arr[j-1] > k {
+				arr[j] = arr[j-1]
+			}
+			arr[j] = k
+		}
+	}
+}

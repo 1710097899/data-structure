@@ -5,7 +5,18 @@ import (
 	"time"
 )
 
-func GenerateOrderedArray(n int, bound int) []int {
+//数组生成器
+//生成有序数组
+func GenerateOrderedArray(n int) []int {
+	arr := make([]int, n, 2*n)
+	for i := 0; i < len(arr); i++ {
+		arr[i] = i
+	}
+	return arr
+}
+
+//生成随机数组
+func GenerateRandomArray(n int, bound int) []int {
 	arr := make([]int, 0, 0)
 	//加入随机数生产数组
 	rand.Seed(time.Now().Unix())
