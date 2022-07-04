@@ -3,6 +3,7 @@ package SortingHelper
 import (
 	insertionSort "data_structure/InsertionSort"
 	"data_structure/MergeSort"
+	"data_structure/QuickSort"
 	"data_structure/SelectionSort"
 	"errors"
 	"fmt"
@@ -33,6 +34,14 @@ func SortTest(sortName string, arr []int, t *testing.T) {
 		MergeSort.Sort(arr)
 	} else if sortName == "MergeSortBU" {
 		MergeSort.SortBU(arr)
+	} else if sortName == "QuickSort" {
+		QuickSort.Sort(arr)
+	} else if sortName == "QuickSort2" {
+		QuickSort.Sort2(arr)
+	} else if sortName == "QuickSort3" {
+		QuickSort.Sort3(arr)
+	} else if sortName == "QuickSort4" {
+		QuickSort.Sort4(arr)
 	}
 	elapsed := time.Since(start)
 	err := IsSorted(arr)
