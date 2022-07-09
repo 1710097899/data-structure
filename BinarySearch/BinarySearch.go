@@ -35,3 +35,18 @@ func Search(data []int, target int) int {
 	}
 	return -1
 }
+
+//>target的最小索引
+func upper(data []int, target int) int {
+	l := 0
+	r := len(data)
+	if l < r {
+		mid := l + (r-l)/2
+		if data[mid] < target {
+			l = mid + 1
+		} else if data[mid] > target {
+			r = mid
+		}
+	}
+	return l
+}
