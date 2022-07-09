@@ -11,8 +11,8 @@
 * 归并排序                                        //MergeSort
 * 快速排序                                        //QuickSort
 * 二分查找法                                      //BinarySearch
-* 集合
-* 映射
+* 集合                                           //Set
+* 映射                                           //Map
 * 最大堆
 * 堆排序
 * 希尔排序
