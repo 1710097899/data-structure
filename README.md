@@ -13,7 +13,7 @@
 * 二分查找法                                      //BinarySearch
 * 集合                                           //Set
 * 映射                                           //Map
-* 最大堆
-* 堆排序
+* 最大堆                                         //MaxHeap
+* 堆排序                                         //HeapSort
 * 希尔排序
 * Lru

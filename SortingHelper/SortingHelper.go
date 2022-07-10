@@ -1,6 +1,7 @@
 package SortingHelper
 
 import (
+	"data_structure/HeapSort"
 	insertionSort "data_structure/InsertionSort"
 	"data_structure/MergeSort"
 	"data_structure/QuickSort"
@@ -42,6 +43,8 @@ func SortTest(sortName string, arr []int, t *testing.T) {
 		QuickSort.Sort3(arr)
 	} else if sortName == "QuickSort4" {
 		QuickSort.Sort4(arr)
+	} else if sortName == "HeapSort" {
+		HeapSort.Sort(arr)
 	}
 	elapsed := time.Since(start)
 	err := IsSorted(arr)

@@ -21,6 +21,7 @@ type IArray interface {
 	GetLast() interface{}
 	GetFrist() interface{}
 	GetArray() []interface{}
+	Swap(i, j int)
 }
 
 type Array struct {
@@ -38,6 +39,13 @@ func NewArray(cap int) IArray {
 
 func (a *Array) GetArray() []interface{} {
 	return a.data[:a.size]
+}
+
+func (a *Array) Swap(i, j int) {
+	if i < 0 || i >= a.size || j < 0 || j >= a.size {
+		panic("Index is illegal.")
+	}
+	a.data[i], a.data[j] = a.data[j], a.data[i]
 }
 
 //获取数组中元素的个数
