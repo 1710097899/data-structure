@@ -87,3 +87,11 @@ func (m *MaxHeap) Replace(e int) int {
 	m.siftDown(0)
 	return ret
 }
+
+//将一个数组直接按索引排成完全二叉树，然后从第一个非叶子节点（最后一个叶子节点索引-1/2）开始进行下沉操作（siftDown）
+func (m *MaxHeap) Heapify(arr []int) {
+	data := Array.NewArrayToArray(arr)
+	for i := m.Parent(data.GetSize() - 1); i >= 0; i-- {
+		m.siftDown(i)
+	}
+}
