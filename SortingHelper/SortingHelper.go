@@ -6,6 +6,7 @@ import (
 	"data_structure/MergeSort"
 	"data_structure/QuickSort"
 	"data_structure/SelectionSort"
+	"data_structure/ShellSort"
 	"errors"
 	"fmt"
 	"testing"
@@ -45,6 +46,8 @@ func SortTest(sortName string, arr []int, t *testing.T) {
 		QuickSort.Sort4(arr)
 	} else if sortName == "HeapSort" {
 		HeapSort.Sort(arr)
+	} else if sortName == "ShellSort" {
+		ShellSort.ShellSort(arr)
 	}
 	elapsed := time.Since(start)
 	err := IsSorted(arr)
