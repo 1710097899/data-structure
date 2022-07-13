@@ -18,4 +18,5 @@
 * 希尔排序【时间O(nlogn)-O(n*2)，空间O(1)】         //shellSort
 * 线段树                                         //segmentTree
 * 前缀树                                         //Trie
+* 并查集                                         //UnionFind
 * Lru
