@@ -17,4 +17,5 @@
 * 堆排序【时间O(nlogn)，空间O(1)】                 //HeapSort
 * 希尔排序【时间O(nlogn)-O(n*2)，空间O(1)】         //shellSort
 * 线段树                                         //segmentTree
+* 前缀树                                         //Trie
 * Lru
