@@ -118,7 +118,6 @@ func (nd *node) remove(key int) (int, *node) {
 			// 待删除节点左右子树均不为空的情况
 			// 找到比待删除节点大的最小节点,即右子树的最小节点
 			retNode := nd.right.getMinNode()
-			// TODO: 这步好好理解,维护平衡性
 			_, retNode.right = nd.right.remove(key)
 
 			retNode.left = nd.left
