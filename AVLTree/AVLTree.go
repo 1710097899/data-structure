@@ -14,16 +14,16 @@ type node struct {
 	right  *node
 }
 
-type avlTree struct {
+type AVLTree struct {
 	size int
 	Root *node
 }
 
-func NewAvlTree() *avlTree {
-	return new(avlTree)
+func NewAvlTree() *AVLTree {
+	return new(AVLTree)
 }
 
-func (tree *avlTree) GetSize() int {
+func (tree *AVLTree) GetSize() int {
 	return tree.size
 }
 
@@ -51,7 +51,7 @@ func max(int1, int2 int) int {
 }
 
 // 添加/更新节点
-func (tree *avlTree) Add(key, val int) {
+func (tree *AVLTree) Add(key, val int) {
 	isAdd, nd := tree.Root.add(key, val)
 	tree.size += isAdd
 	tree.Root = nd
@@ -80,7 +80,7 @@ func (nd *node) add(key, val int) (int, *node) {
 	return isAdd, nd
 }
 
-func (tree *avlTree) Remove(key int) error {
+func (tree *AVLTree) Remove(key int) error {
 	if tree.Root == nil {
 		return errors.New(
 			"failed to remove,avlTree is empty.")
@@ -173,7 +173,7 @@ func (y *node) leftRotate() *node {
 	return x
 }
 
-func (tree *avlTree) Contains(key int) bool {
+func (tree *AVLTree) Contains(key int) bool {
 	return tree.Root.contains(key)
 }
 
@@ -194,7 +194,7 @@ func (nd *node) contains(key int) bool {
 }
 
 // 中序遍历打印出key,val,height
-func (tree *avlTree) PrintInOrder() {
+func (tree *AVLTree) PrintInOrder() {
 	resp := [][]int{}
 	tree.Root.printInOrder(&resp)
 	fmt.Println(resp)
@@ -222,7 +222,7 @@ func (nd *node) traverseInOrderKey(resp *[]int) {
 
 // 判断avlTree是否仍然是一颗二分搜索树
 // 思路: 二分搜索数如果用中序遍历时,所有元素都是从小到大排列
-func (tree *avlTree) IsBST() bool {
+func (tree *AVLTree) IsBST() bool {
 	buf := []int{}
 	tree.Root.traverseInOrderKey(&buf)
 	length := len(buf)
@@ -235,7 +235,7 @@ func (tree *avlTree) IsBST() bool {
 }
 
 // 判断avlTree是否是一颗平衡二叉树(每个节点的左右子树高度差不能超过1)
-func (tree *avlTree) IsBalanced() bool {
+func (tree *AVLTree) IsBalanced() bool {
 	return tree.Root.isBalanced()
 }
 
