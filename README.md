@@ -19,4 +19,5 @@
 * 线段树                                         //segmentTree
 * 前缀树                                         //Trie
 * 并查集                                         //UnionFind
+* AVLTree                                      //AVLTree
 * Lru
